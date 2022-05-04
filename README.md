@@ -1,13 +1,13 @@
-# Python: Getting Started
+# COMP3297 Group N Group Project - StudySafe Trace
+url: https://glacial-crag-15818.herokuapp.com/
 
-A barebones Django app, which can easily be deployed to Heroku.
+# API endpoints to fetch (StudySafe Core)
+https://thawing-island-30523.herokuapp.com/backend/api/venues  
+https://thawing-island-30523.herokuapp.com/backend/api/contacts
 
-This application supports the [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python) article - check it out for instructions on how to deploy this app to Heroku and also run it locally.
+## run the server locally 
+`python3 manage.py runserver`  
 
-Alternatively, you can deploy it using this Heroku Button:
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
-For more information about using Python on Heroku, see these Dev Center articles:
-
-- [Python on Heroku](https://devcenter.heroku.com/categories/python)
+## view and edit data records
+visit [here](http://localhost:8000/admin)  
+login with the username and password created in the set up part
