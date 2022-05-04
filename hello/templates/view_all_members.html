@@ -1,0 +1,11 @@
+<h1>Showing all Members </h1>
+<ul>
+{% for member in object_list %}
+    <li>
+        {{ member.name }} ({{member.uid}})
+    </li>
+
+{% empty %}
+    <li>No member yet.</li>
+{% endfor %} 
+</ul>

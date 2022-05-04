@@ -1,0 +1,13 @@
+<h1>Showing all venues </h1>
+<ul>
+{% for venue in object_list %}
+    <li>
+        <a href="{% url 'venue-info' venue.pk %}">
+            {{ venue.v_code }}
+        </a>
+    </li>
+
+{% empty %}
+    <li>No venue yet.</li>
+{% endfor %} 
+</ul>
