@@ -38,10 +38,10 @@ def venues(request):
             #api call
             url1 = "https://comp3297groupproject.herokuapp.com/backend/api/venues?uid="+str(user)+"&date="+str(date)  
             response1 = requests.get(url1)
-            #print(response1.text)
+            print(response1.text)
             result1 = response1.json()
             return render(request, "venues.html", {
-                "venues": result1,
+                "venues": result1['Venues'],
                 "subject": user,
                 "date": date,
             })
