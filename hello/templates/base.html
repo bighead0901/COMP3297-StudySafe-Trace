@@ -96,7 +96,7 @@
     <div class="search">
       <br/><br/>
     <form method="POST" action="{% url 'index' %}">{% csrf_token %}
-      <input type="text" placeholder="Search.." name="uid"></input>
+      <input type="text" placeholder="Search.." name="uid" required></input>
       <button type="submit">🔎</button>
     </form>
     </div>
