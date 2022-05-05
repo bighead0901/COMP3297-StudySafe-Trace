@@ -27,7 +27,12 @@ def index(request):
 def venues(request):
     if request.method == "POST":
         if request.POST.get('venues'):
-            user = current_uid
+            if request.POST.get('uid'):
+                user = request.POST.get('uid')
+                global current_uid
+                current_uid = user
+            else:
+                user = current_uid
             if user == "3025704501":
                 date = "2022-05-05"
             else:
@@ -46,7 +51,12 @@ def venues(request):
 def contacts(request):
     if request.method == "POST":
         if request.POST.get('contacts'):
-            user = current_uid
+            if request.POST.get('uid'):
+                user = request.POST.get('uid')
+                global current_uid
+                current_uid = user
+            else:
+                user = current_uid
             if user == "3025704501":
                 date = "2022-05-05"
             else:
