@@ -3,12 +3,16 @@ from django.http import HttpResponse
 
 from .models import Greeting
 
+current_uid = None
+
 # Create your views here.
 def index(request):
     user = "No input"
     date = "No input"
     if request.method == "POST":
         user = request.POST.get('uid')
+        global current_uid
+        current_uid = user
         if user == "3025704501":
             date = "2022-05-05"
         else:
@@ -23,7 +27,7 @@ def index(request):
 def venues(request):
     if request.method == "POST":
         if request.POST.get('venues'):
-            user = request.POST.get('uid')
+            user = current_uid
             if user == "3025704501":
                 date = "2022-05-05"
             else:
@@ -42,7 +46,7 @@ def venues(request):
 def contacts(request):
     if request.method == "POST":
         if request.POST.get('contacts'):
-            user = request.POST.get('uid')
+            user = current_uid
             if user == "3025704501":
                 date = "2022-05-05"
             else:
