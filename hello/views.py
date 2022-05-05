@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+import requests
+import json
 
 from .models import Greeting
 
@@ -11,9 +13,10 @@ def index(request):
         user = request.POST.get('uid')
         date = request.POST.get('date')
         request.session['uid'] = user
-        request.session['uid'] = date
+        request.session['date'] = date
     else:
         request.session['uid'] = "No input"
+        request.session['date'] = "No input"
         
     return render(request, "base.html", {
         "venues": ["dllm", "on99"],
@@ -32,8 +35,13 @@ def venues(request):
                 date = request.POST.get('date')
             else:
                 date = request.session['date']
+            #api call
+            url1 = "https://comp3297groupproject.herokuapp.com/backend/api/venues?uid="+str(user)+"&date="+str(date)  
+            response1 = requests.get(url1)
+            #print(response1.text)
+            result1 = response1.json()
             return render(request, "venues.html", {
-                "venues": ["dllm", "on99"],
+                "venues": result1,
                 "subject": user,
                 "date": date,
             })
@@ -41,7 +49,6 @@ def venues(request):
 def contacts(request):
     if request.method == "POST":
         if request.POST.get('contacts'):
-            global current_uid
             if request.POST.get('uid'):
                 user = request.POST.get('uid')
             else:
