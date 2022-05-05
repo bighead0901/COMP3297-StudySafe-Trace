@@ -14,6 +14,8 @@ def index(request):
             date = "2022-05-05"
         else:
             date = "No record"
+    else:
+        request.session['uid'] = "No input"
         
     return render(request, "base.html", {
         "venues": ["dllm", "on99"],
