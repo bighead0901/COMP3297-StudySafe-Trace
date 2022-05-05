@@ -9,11 +9,9 @@ def index(request):
     date = "No input"
     if request.method == "POST":
         user = request.POST.get('uid')
+        date = request.POST.get('date')
         request.session['uid'] = user
-        if user == "3025704501":
-            date = "2022-05-05"
-        else:
-            date = "No record"
+        request.session['uid'] = date
     else:
         request.session['uid'] = "No input"
         
@@ -30,10 +28,10 @@ def venues(request):
                 user = request.POST.get('uid')
             else:
                 user = request.session['uid']
-            if user == "3025704501":
-                date = "2022-05-05"
+            if request.POST.get('date'):
+                date = request.POST.get('date')
             else:
-                date = "No record"
+                date = request.session['date']
             return render(request, "venues.html", {
                 "venues": ["dllm", "on99"],
                 "subject": user,
@@ -48,10 +46,10 @@ def contacts(request):
                 user = request.POST.get('uid')
             else:
                 user = request.session['uid']
-            if user == "3025704501":
-                date = "2022-05-05"
+            if request.POST.get('date'):
+                date = request.POST.get('date')
             else:
-                date = "No record"
+                date = request.session['date']
             return render(request, "contacts.html", {
                 "venues": ["dllm", "on99"],
                 "subject": user,
