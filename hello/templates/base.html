@@ -70,6 +70,20 @@
       .info .block {
         flex-basis: 50%;
       }
+      .search{
+        display: flex;
+        width: 100%;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+      }
+      .search2{
+        display: flex;
+        width: 100%;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+      }
     </style>
   </head>
   <body>
@@ -78,6 +92,25 @@
       <h1>CONTACTS</h1>
     </header>
     {% endblock %}
+
+    <div class="search">
+      <br/><br/>
+    <form method="POST" action="{% url 'index' %}">{% csrf_token %}
+      <input type="text" placeholder="Search.." name="uid"></input>
+      <button type="submit">🔎</button>
+    </form>
+    </div>
+
+    <div class="search2">
+      <br/>
+      <form method="POST" action="{% url 'venues' %}">{% csrf_token %}
+        <button type="submit" value="venues" name="venues">Venues</button>
+      </form>
+      <form method="POST" action="{% url 'contacts' %}">{% csrf_token %}
+        <button type="submit" value="contacts" name="contacts">Contacts</button>
+      </form>
+    </div>
+    
     <div class="main-content">
       <div class="info">
         <div class="block">
