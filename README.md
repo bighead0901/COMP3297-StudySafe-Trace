@@ -2,8 +2,7 @@
 url: https://glacial-crag-15818.herokuapp.com/
 
 # User Guide
-Fill in the HKU ID in the search box, choose the date of diagnosis and click search.
-
+Fill in the HKU ID in the search box, choose the date of diagnosis and click search.  
 Confirming the ID and date is correct, click the venue/contacts button to view the corresponding list.
 
 # API endpoints using (StudySafe Core)
