@@ -36,7 +36,7 @@ def venues(request):
             else:
                 date = request.session['date']
             #api call
-            url1 = "https://thawing-island-30523.herokuapp.com/backend/api/venues?uid="+str(user)+"&date="+str(date)  
+            url1 = "https://comp3297groupproject.herokuapp.com/backend/api/venues?uid="+str(user)+"&date="+str(date)  
             response1 = requests.get(url1)
             print(response1.text)
             result1 = response1.json()
@@ -58,7 +58,7 @@ def contacts(request):
             else:
                 date = request.session['date']
             #api call
-            url2 = "https://thawing-island-30523.herokuapp.com/backend/api/contacts?uid="+str(user)+"&date="+str(date)  
+            url2 = "https://comp3297groupproject.herokuapp.com/backend/api/venues?uid="+str(user)+"&date="+str(date)  
             response2 = requests.get(url2)
             print(response2.text)
             result2 = response2.json()
