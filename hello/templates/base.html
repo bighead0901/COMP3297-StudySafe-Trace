@@ -71,6 +71,7 @@
         flex-basis: 50%;
       }
       .search{
+        padding-top: 10px;
         display: flex;
         width: 100%;
         flex-flow: row nowrap;
@@ -78,6 +79,7 @@
         align-items: center;
       }
       .search2{
+        padding-top: 10px;
         display: flex;
         width: 100%;
         flex-flow: row nowrap;
@@ -93,24 +95,8 @@
     </header>
     {% endblock %}
 
-    <div class="search">
-      <br/><br/>
-    <form method="POST" action="{% url 'index' %}">{% csrf_token %}
-      <input type="text" placeholder="Search.." name="uid" required></input>
-      <input type="date" placeholder="" name="date" required></input>
-      <button type="submit">🔎</button>
-    </form>
-    </div>
-
-    <div class="search2">
-      <br/>
-      <form method="POST" action="{% url 'venues' %}">{% csrf_token %}
-        <button type="submit" value="venues" name="venues">Venues</button>
-      </form>
-      <form method="POST" action="{% url 'contacts' %}">{% csrf_token %}
-        <button type="submit" value="contacts" name="contacts">Contacts</button>
-      </form>
-    </div>
+    {% block search %}
+    {% endblock %}
     
     <div class="main-content">
       <div class="info">

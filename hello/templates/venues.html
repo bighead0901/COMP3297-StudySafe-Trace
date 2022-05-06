@@ -19,6 +19,16 @@
   </header>
 {% endblock %}
 
+{% block search %}
+  <div class="search">
+    <form method="POST" action="{% url 'venues' %}">{% csrf_token %}
+      <input type="text" placeholder="Search.." name="uid" required></input>
+      <input type="date" placeholder="" name="date" required></input>
+      <button type="submit">🔎</button>
+    </form>
+  </div>
+{% endblock %}
+
 {% block details %}
     <div class="block">
       <div class="label">Venues visited during infectious period:</div>
