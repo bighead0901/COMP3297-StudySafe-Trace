@@ -57,8 +57,13 @@ def contacts(request):
                 date = request.POST.get('date')
             else:
                 date = request.session['date']
+            #api call
+            url2 = "https://comp3297groupproject.herokuapp.com/backend/api/contacts?uid="+str(user)+"&date="+str(date)  
+            response2 = requests.get(url2)
+            print(response2.text)
+            result2 = response2.json()
             return render(request, "contacts.html", {
-                "venues": ["dllm", "on99"],
+                "venues": result2['UID'],
                 "subject": user,
                 "date": date,
             })
