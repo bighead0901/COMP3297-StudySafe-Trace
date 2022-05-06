@@ -1,5 +1,5 @@
 # COMP3297 Group N Group Project - StudySafe Trace
-Venues endpoint: https://glacial-crag-15818.herokuapp.com/venues/
+Venues endpoint: https://glacial-crag-15818.herokuapp.com/venues/  
 Contacts endpoint: https://glacial-crag-15818.herokuapp.com/contacts/
 
 # User Guide
